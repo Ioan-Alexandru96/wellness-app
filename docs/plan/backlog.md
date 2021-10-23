@@ -1,33 +1,31 @@
 # 1. define objective
-calculate someone's ideal weight and offer options/advices for acheiving  it.
+    track issues and have team visibility
 
 # 2. define entities
 
 ## user
-- user can read multiple recipes.
-- user can buy multiple products.
-- user can play multiple sports.
+    user can work on multiple projects
+    user can be assigned to multiple tasks
 
-## recipe
+## project
+    a project can have multiple users
+    a project can have multiple sprints
 
-- recipe can be read by multiple users
+## sprint
+    a sprint can hold multiple tasks
 
-## product
-- product can be bought by multiple users.
-
-## sport
-- sport can be played by multiple users
+## task
+    tasks must be filtered by project
 
 # 3. create epics
-
 - user
-- recipe
-- product
-- sport
+- project
+- sprint
+- task
 
 # 4. create backlog
- add user stories
- 
+- add user stories
+
 ## register
 - view register page
 - register with email and password
@@ -38,17 +36,37 @@ calculate someone's ideal weight and offer options/advices for acheiving  it.
 - view forgot password page
 - reset password
 
+## manage project
+- view project list
+- create project
+- update project info
+- delete project
+- as project lead, add user to project
+- view backlog page
+- view board page
+
+## manage sprint
+- create sprint
+- update sprint info
+- delete sprint
+- add task to sprint
+- remove task from sprint
+- assign user to task
+- un-assign user from task
+- start sprint
+- complete sprint
+- view sprint total story points
+
+## manage task
+- view task list
+- create task
+- update task info
+- delete task
+- add task to project
+- search task
+
 ## manage user
-- view user's page
+- view users page
 - update user info
-
-## manage recipes
-- view recipes page
-
-## manage products 
-- view products page 
-- add to cart product
-
-## sport options
-- view sports description page
-- search gyms in your area 
+- as admin, deactivate user
+- as admin, activate user

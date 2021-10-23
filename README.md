@@ -9,4 +9,8 @@
 # Documentation for final project
 
 https://github.com/cosminbucur/final-ro23
----
+## TEAM     Vega
+- GIT       FlorentinaDascalitei
+- GIT       AlinNorocea
+- GIT       Ioan-Alexandru96
+
