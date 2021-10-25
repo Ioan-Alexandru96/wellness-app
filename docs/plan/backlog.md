@@ -3,6 +3,7 @@
 
 # 2. define entities
 
+
 ## user
     user can work on multiple projects
     user can be assigned to multiple tasks
