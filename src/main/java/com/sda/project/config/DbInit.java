@@ -91,7 +91,7 @@ public class DbInit {
     }
 
     @Transactional
-    Role createRoleIfNotFound(RoleType type, Set<Privilege> privileges) {
+    public Role createRoleIfNotFound(RoleType type, Set<Privilege> privileges) {
         return (Role) roleRepository.findByType(type)
                 .map(existingPrivilege -> {
                     throw new ResourceAlreadyExistsException("role already exists");
@@ -104,7 +104,7 @@ public class DbInit {
     }
 
     @Transactional
-    Privilege createPrivilegeIfNotFound(PrivilegeType name) {
+    public Privilege createPrivilegeIfNotFound(PrivilegeType name) {
         return (Privilege) privilegeRepository.findByType(name)
                 .map(existingPrivilege -> {
                     throw new ResourceAlreadyExistsException("privilege already exists");
