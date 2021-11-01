@@ -26,8 +26,9 @@
         }
 
         .bg {
-            animation: slide 3s ease-in-out infinite alternate;
-            background-image: linear-gradient(-60deg, chocolate 50%, beige 50%);
+            animation: slide 10s ease-in-out infinite alternate;
+            background-image: linear-gradient(-60deg, rgb(210, 30, 30) 30%, rgb(255, 0, 0) 50%);
+            background-image: linear-gradient(-60deg, rgb(210, 30, 30) 10%, rgb(222, 220, 245) 50%);
             bottom: 0;
             left: -50%;
             opacity: .5;
@@ -60,48 +61,50 @@
         }
 
         .container label {
-            color: white;
+            color: rgb(0, 0, 0);
             font-weight: bold;
-            font-size: 10px;
+            font-size: 25px;
         }
 
 
         /*    Login Form*/
         body {
-            background: #222D32;
+            background: #ffffff;
             font-family: 'Roboto', sans-serif;
         }
 
         .login-box {
-            margin-top: 75px;
+            margin-top: 135px;
             height: auto;
-            background: chocolate;
+            background: linear-gradient(red, green, cyan);
+            background-image: linear-gradient(-60deg, rgb(103, 194, 255) 10%, rgb(224, 69, 186) 80%);
             text-align: center;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
         }
 
         .login-key {
-            height: 100px;
+            height: 40px;
             font-size: 80px;
             line-height: 100px;
-            background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
+            background: -webkit-linear-gradient(#76e2b7, #ff0015);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .login-title {
-            margin-top: 15px;
+            margin-top: 25px;
             text-align: center;
-            font-size: 30px;
-            letter-spacing: 2px;
+            font-size: 60px;
+            letter-spacing: 20px;
             margin-top: 15px;
             font-weight: bold;
-            color: #ECF0F5;
+            color: linear-gradient(red, green, rgb(85, 241, 241));
+            /*<!-- Pentru cadru la background login background-image: linear-gradient(-50deg, rgba(255, 0, 140, 0.445) 10%, rgb(222, 220, 245) 90%);-->>*/
         }
 
         .login-form {
-            margin-top: 25px;
-            text-align: left;
+            margin-top: 20px;
+            text-align: center;
         }
 
         input[type=text] {
@@ -118,7 +121,7 @@
         }
 
         input[type=password] {
-            background-color: #1A2226;
+            background-color: #000000;
             border: none;
             border-bottom: 2px solid #0DB8DE;
             border-top: 0px;
@@ -131,7 +134,7 @@
         }
 
         .form-group {
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             outline: 0px;
         }
 
@@ -141,7 +144,7 @@
             box-shadow: none;
             border-bottom: 2px solid #0DB8DE;
             outline: 0;
-            background-color: #1A2226;
+            background-color: #1f1a26;
             color: #ECF0F5;
         }
 
@@ -151,20 +154,20 @@
         }
 
         label {
-            margin-bottom: 0px;
+            margin-bottom: 23px;
         }
 
         .form-control-label {
             font-size: 10px;
             color: #6C6C6C;
             font-weight: bold;
-            letter-spacing: 1px;
+            letter-spacing: 5px;
         }
 
         .btn-outline-primary {
-            border-color: #0DB8DE;
-            color: #0DB8DE;
-            border-radius: 0px;
+            border-color: #000000;
+            color: #ffffff;
+            border-radius: 23px;
             font-weight: bold;
             letter-spacing: 1px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -180,13 +183,13 @@
         }
 
         .login-button {
-            padding-right: 0px;
+            padding-right:500px;
             text-align: right;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .login-text {
-            text-align: left;
+            text-align: center;
             padding-left: 0px;
             color: white;
         }
@@ -230,23 +233,10 @@
                 <a class="nav-link" href="/index">HOME <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/about">ABOUT</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/stuff">SERVICES</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/offers">OFFERS</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/gallery">GALLERY</a>
+                <a class="nav-link" href="/about">ABOUT US</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/contact">CONTACT</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="/cards" sec:authorize="isAuthenticated()">CAKE SHOP</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" sec:authorize="!isAuthenticated()" href="/login">LOGIN</a>
@@ -257,10 +247,7 @@
             <li class="nav-item">
                 <a class="nav-link" sec:authorize="!isAuthenticated()" href="/register">REGISTER</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/product/add" sec:authorize="hasAuthority('ADMIN')">ADD PRODUCT</a>
-            </li>
-
+           
         </ul>
     </div>
 
