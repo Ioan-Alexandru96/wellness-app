@@ -47,11 +47,9 @@ public class DbInit {
             createRoleIfNotFound(RoleType.USER, Set.of(readPrivilege, writePrivilege));
 
             // create main admin, admin, user
-            User mainAdmin = createMainAdmin();
-            userRepository.save(mainAdmin);
-
-            User admin = createAdmin();
-            User user = createUser();
+            createMainAdmin();
+            createAdmin();
+            createUser();
         };
     }
 

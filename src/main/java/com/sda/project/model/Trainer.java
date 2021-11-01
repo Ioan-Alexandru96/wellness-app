@@ -11,9 +11,9 @@ import javax.persistence.Id;
 @Setter
 @Entity
 public class Trainer {
+
     @Id
     @GeneratedValue
     private Integer id;
     private String name;
-
 }
