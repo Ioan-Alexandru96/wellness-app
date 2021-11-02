@@ -1,4 +1,4 @@
-package com.sda.project.entities;
+package com.sda.project.model;
 
 import javax.persistence.*;
 
