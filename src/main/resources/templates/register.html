@@ -3,7 +3,7 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
 
-    <title>Register | Wedding Cake Bootstrap Theme</title>
+    <title>Register | Wellness-App Bootstrap Theme</title>
 
     <!--    AL MEU !!!-->
     <title>Front PAGE</title>
@@ -269,12 +269,12 @@
                     <form action="/register" method="post" th:object="${registerContainer}">
 
                         <div class="form-group">
-                            <label class="form-control-label">New Username</label>
+                            <label class="form-control-label"> Username</label>
                             <input type="username" name="username" class="form-control" th:field="*{username}">
                         </div>
 
                         <div class="form-group">
-                            <label class="form-control-label">New Password</label>
+                            <label class="form-control-label"> Password</label>
                             <input type="password" name="password" class="form-control" th:field="*{password}">
                         </div>
 
