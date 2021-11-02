@@ -24,7 +24,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/", "/index" ,"/register").permitAll()
+                // common
+                .antMatchers("/", "/index" ,"/register", "/login").permitAll()
+
+                // not protected
+                .antMatchers("/about").permitAll()
+
+                // TODO: remove this in production
+                .antMatchers("/calories").permitAll()
+
                 .antMatchers("/static/favicon.ico", "/images/**", "/js/**", "/css/**").permitAll()
                 .antMatchers("/users").hasRole("ADMIN")
                 .anyRequest().authenticated();
