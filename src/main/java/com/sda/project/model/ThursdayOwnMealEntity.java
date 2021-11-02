@@ -1,18 +1,18 @@
-package com.sda.project.entities;
+package com.sda.project.model;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table (name = "saturdayOwnMeal")
-public class SaturdayOwnMealEntity {
+@Table (name = "thursdayOwnMeal")
+public class ThursdayOwnMealEntity {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
 
     @Column
-    private Integer saturdayOwnMealId;
+    private Integer thursdayOwnMealId;
     @Column
     private String breakfast;
     @Column
@@ -25,18 +25,18 @@ public class SaturdayOwnMealEntity {
     private UserEntity user;
 
     @ManyToMany
-    @JoinTable(name ="saturdayOwnMeal_alimentsSelected",
-            joinColumns = {@JoinColumn(name = "saturdayOwnMealId")},
+    @JoinTable(name ="thursdayOwnMeal_alimentsSelected",
+            joinColumns = {@JoinColumn(name = "thursdayOwnMealId")},
             inverseJoinColumns = {@JoinColumn(name = "alimentSelectedId")})
 
     private Set<AlimentsSelectTableEntity> alimentsSelectTable = new HashSet();
 
-    public Integer getSaturdayOwnMealId() {
-        return saturdayOwnMealId;
+    public Integer getThursdayOwnMealId() {
+        return thursdayOwnMealId;
     }
 
-    public void setSaturdayOwnMealId(Integer saturdayOwnMealId) {
-        this.saturdayOwnMealId = saturdayOwnMealId;
+    public void setThursdayOwnMealId(Integer thursdayOwnMealId) {
+        this.thursdayOwnMealId = thursdayOwnMealId;
     }
 
     public String getBreakfast() {

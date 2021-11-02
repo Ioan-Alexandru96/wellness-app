@@ -1,5 +1,5 @@
 # 1. define objective
-    track issues and have team visibility
+    Obtain ideal weight and number of calories per day
 
 # 2. define entities
 
