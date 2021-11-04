@@ -9,8 +9,51 @@
 <div>
     <h1>Content</h1>
     <!-- TODO: add inputs -->
-    <!-- TODO: add calculate button -->
-    <!-- TODO: add calculation result -->
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="/age" placeholder="Age: ">
+        <label for="/age">Age</label>
+    </div>
+
+</div>
+<div class="col-md">
+    <div class="form-floating">
+        <select class="form-select" id="/gender" aria-label="Floating label select example">
+            <!--            <option selected>Select your gender:</option>-->
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+        </select>
+        <label for="/gender">Select your gender:</label>
+    </div>
+</div>
+
+</div>
+<div class="form-floating mb-3">
+    <input type="text" class="form-control" id="/height" placeholder="Height (cm): ">
+    <label for="/height">Height</label>
+</div>
+
+</div>
+<div class="form-floating mb-3">
+    <input type="text" class="form-control" id="/weight" placeholder="Weight (kg): ">
+    <label for="/height">Weight</label>
+</div>
+
+</div>
+<div class="col-md">
+    <div class="form-floating">
+        <select class="form-select" id="/activityLevel" aria-label="Floating label select example">
+            <!--            <option selected>Select your gender:</option>-->
+            <option value="1">Sedentary</option>
+            <option value="2">Moderate</option>
+            <option value="3">Active</option>
+        </select>
+        <label for="/gender">Select your activity level:</label>
+    </div>
+</div>
+
+<!-- TODO: add calculate button -->
+<!-- TODO: add calculation result -->
 </div>
 
 <div th:replace="fragments/footer-js :: footer-js"/>
