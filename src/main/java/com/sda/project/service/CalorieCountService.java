@@ -1,6 +1,7 @@
 package com.sda.project.service;
 
 import com.sda.project.model.CalorieCount;
+import com.sda.project.model.Gender;
 import com.sda.project.repository.CalorieCountRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,10 +22,20 @@ public class CalorieCountService {
 
     public void save(CalorieCount calorieCount) {
         log.info("save calorie count {}", calorieCount);
-
+        calorieCount.calculateNoOfCalories();
         // TODO: call calculate()
         repository.save(calorieCount);
     }
 
     // TODO: private calculate()
+//    private Double calculateBMR() {
+//        if (gender == Gender.MALE) {
+//            BMR = (10 * weight) + (6.25d * height) - (5d * age) + 5d;
+//        } else {
+//            BMR = (10 * weight) + (6.25d * height) - (5d * age) - 161d;
+//        }
+//        return BMR;
+//    }
+
+
 }
