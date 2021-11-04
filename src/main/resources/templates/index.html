@@ -5,31 +5,161 @@
     <title>Landing</title>
 </head>
 
-<body>
+<br>
+<nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-<div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/index">HOME <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">ABOUT US</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">CONTACT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" sec:authorize="!isAuthenticated()" href="/login">LOGIN</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" sec:authorize="isAuthenticated()" href="/logout">LOGOUT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" sec:authorize="!isAuthenticated()" href="/register">REGISTER</a>
+            </li>
 
+        </ul>
+    </div>
+
+</nav>
+<br>
+
+<div class="carousel-inner" role="listbox">
+    <div class="item active">
+        <img src="images/Wallpapervegetables2.jpg" alt="carousel2" style="width:100%"/>
+        <div class="carousel-caption">
+            <h2>"Natural for a better life"</h2>
+            <p></p>
+        </div>
+    </div>
+    <div class="item">
+        <img src="images/Wallpapervegetables.jpg" alt="carousel1" style="width:100%"/>
+        <div class="carousel-caption">
+            <h2>Those who believe they do not have time for a healthy diet will sooner or later find time for illness.
+            </h2>
+            <p>Take care of yourself
+            </p>
+        </div>
+    </div>
+    <div class="item">
+        <img src="images/Wallpapervegetables1.jpg" alt="carousel3" style="width:100%"/>
+        <div class="carousel-caption">
+            <h2>Why we are here?</h2>
+            <p>For change yourlife in the good </p>
+        </div>
+    </div>
+</div>
+<!-- Controls -->
+<a class="left carousel-control" href="#theme-carousel" role="button" data-slide="prev">
+    <div class="carousel-control-arrow">&#8249;</div>
+</a>
+<a class="right carousel-control" href="#theme-carousel" role="button" data-slide="next">
+    <div class="carousel-control-arrow">&#8250;</div>
+</a>
+</div>
+
+<div class="container-home">
     <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="row">
-                <h2>Agile</h2>
+        <div class="row">
+            <div class="col-md-8">
+                <p style="font-size:40px;color: rgb(40, 185, 3);">Hello! I am happy to see you!
+                <h3>Are you ready?</h3>
+                <p class="text-justify">We have over 20 years of experience in the domain, now you can change your life in good.
+                    Says stop unhealthy eating. Life does not mean food, life has priority !
+                </p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="images/Salat and pizza compare.jpg" class="img-responsive"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="images/image2.jpg" class="img-responsive"/>
+            </div>
+            <div class="col-md-8">
+                <p style="font-size:40px;color: rgb(40, 185, 3);">About Us!
+                <h3> What is it ideal weight? </h3>
+                <p class="text-justify">Ideal body weight is a problem that worries more and more people for various reasons.The ideal weight should be related only to the state of health.
+                    We can help you how to get the ideal weight, with a special calculator for this !
+                </p>
             </div>
         </div>
     </div>
+</div>
 
-    <div>
-        <a th:href="@{/login}">
-            <button class="btn btn-secondary" id="login" name="login" type="button">Log in</button>
-        </a>
-
-        <a th:href="@{/register}">
-            <button class="btn btn-primary" id="register" name="register" type="submit">Sign up</button>
-        </a>
+<footer id="subfooter" class="clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <p style="font-size:23px;color: crimson;"><i class="fa fa-bell-o" aria-hidden="true"></i>
+                    </span> Day Offer</p>
+                <p>Register now and you will be give a gift a consulting session with a professional trainer !</p>
+            </div>
+            <div class="col-md-3">
+                <p style="font-size:23px;color: rgb(34, 147, 192);"><i class="fa fa-ticket" aria-hidden="true"></i></span> Suport for aplication 24/7</p>
+                <p>The developer provides support 24/24 </p>
+            </div>
+            <div class="col-md-3">
+                <p style="font-size:25px;color: crimson;"><i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                    </span> Contacts</p>
+                <p>70 Av. Gilbert Berger, 93290 Tremblay-en-France</p>
+                <p><a href="mailto:mail@example.com">+4125321562432</a></p>
+                <p><a href="mailto:mail@example.com">welllness-app@gym.com</a></p>
+            </div>
+            <div class="col-md-3">
+                <p style="font-size:23px;color: dark;position: absolute;left:30px;top: 0px;"><i class="fa fa-envelope" aria-hidden="true" ></i>
+                    </span> Promotion</p>
+                <p>
+                <div class="input-group">
+                    <input type="text"style=position:absolute;left:-5px;top:30px;="form-control" placeholder="Enter your email..."/>
+                    <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button"; style="color: rgb(135, 244, 248);position: absolute;left:45px;top: 70px;">Subscribe</button>
+                        </span>
+                </div>
+                </p>
+                <p><br/></p>
+                <p>
+                    <a class="fa fa-instagram"target="_blank" href="https://www.instagram.com/"; style="font-size:35px;color: dark;position: absolute;left:-780px;top: 150px;color: rgb(255, 0, 0);"></a>
+                    <a class="fa fa-facebook" target="_blank" href="https://www.facebook.com/"; style="font-size:35px;color: dark;position: absolute;left:-480px;top: 150px;color: rgb(51, 105, 204);"></a>
+                    <a class="fa fa-android"target="_blank" href="https://play.google.com/"; style="font-size:35px;color: dark;position: absolute;left:-210px;top: 150px;color: rgb(14, 224, 42);"></a>
+                    <a class="fa fa fa-youtube" target="_blank" href="https://www.youtube.com/"; style="font-size:35px;color: dark;position: absolute;left:95px;top: 150px;color: brown;"></a>
+                </p>
+            </div>
+        </div>
     </div>
+</footer>
+
+<footer id="footer" class="clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+            </div>
+            <div class="col-md-4">
+                <p>Created by <a href="https://www.shieldui.com" title="Shield UI">Shield UI</a> and hosted by <a
+                        href="https://www.prepbootstrap.com" title="PrepBootstrap">PrepBootstrap</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 </div>
 
 <div th:replace="fragments/footer-js :: footer-js"/>
-</body>
 
 </html>
