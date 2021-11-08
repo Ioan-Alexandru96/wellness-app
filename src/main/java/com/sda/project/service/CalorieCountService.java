@@ -24,43 +24,46 @@ public class CalorieCountService {
     public void save(CalorieCount calorieCount) {
         log.info("save calorie count {}", calorieCount);
 
-        // TODO: call calculate()
+        double BMR = calculateBMR(calorieCount);
+        calorieCount.setBMR(BMR);
 
-        calculateBMR();
-        calculateNoOfCalories();
+        double numberOfCalories = calculateNoOfCalories(calorieCount);
+        calorieCount.setResult(numberOfCalories);
         repository.save(calorieCount);
     }
 
-    // TODO: private calculate()
-
-    private int age;
-    private Gender gender;
-    private Integer height;
-    private Integer weight;
-    private ActivityLevel activityLevel;
-    private Double result;
-    private Double BMR;
-
-    private Double calculateBMR() {
-        if (gender == Gender.MALE) {
-            BMR = (10 * weight) + (6.25d * height) - (5d * age) + 5d;
-        } else {
-            BMR = (10 * weight) + (6.25d * height) - (5d * age) - 161d;
+    /**
+     * Calculates the number of calories based on activity type
+     *      SEDENTARY: BMR x 1.2
+     *      MODERATE: BMR x 1.55
+     *      ACTIVE: BMR x 1.725
+     * @return the number of calories
+     */
+    public Double calculateNoOfCalories(CalorieCount calorieCount) {
+        double BMR = calorieCount.getBMR();
+        ActivityLevel activityLevel = calorieCount.getActivityLevel();
+        switch (activityLevel) {
+            case SEDENTARY: return BMR * 1.2;
+            case MODERATE: return BMR * 1.55;
+            case ACTIVE: return BMR * 1.72;
+            default: throw new IllegalArgumentException("no such activity type");
         }
-        return BMR;
     }
-    //    calorieCalculator:
-//Sedentary: Calorie-Calculation = BMR x 1.2
-//Moderate: Calorie-Calculation = BMR x 1.55
-//active: Calorie-Calculation = BMR x 1.725
 
-    public Double calculateNoOfCalories() {
-        if (activityLevel == ActivityLevel.SEDENTARY) {
-            return result = 1.2 * calculateBMR();
-        } else if (activityLevel == ActivityLevel.MODERATE) {
-            return result = 1.55 * calculateBMR();
-        } else {
-            return result = 1.72 * BMR;
+    /**
+     * Calculates the body mass index based on gender, age, weight, height.
+     * @return the body mass index
+     */
+    private Double calculateBMR(CalorieCount calorieCount) {
+        Gender gender = calorieCount.getGender();
+        int weight = calorieCount.getWeight();
+        int height = calorieCount.getHeight();
+        int age = calorieCount.getAge();
+
+        switch (gender) {
+            case MALE: return (10 * weight) + (6.25d * height) - (5d * age) + 5d;
+            case FEMALE: return (10 * weight) + (6.25d * height) - (5d * age) - 161d;
+            default: throw new IllegalArgumentException("no other gender created by God");
         }
     }
 }

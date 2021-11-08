@@ -24,7 +24,6 @@ public class CalorieCount {
     private Integer weight;
     private ActivityLevel activityLevel;
     private Double result;
-
-
+    private Double BMR;
 
 }

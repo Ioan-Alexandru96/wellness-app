@@ -17,4 +17,14 @@ public class IdealWeight {
     private int age;
     private Gender gender;
     private Integer height;
+
+    @Override
+    public String toString() {
+        return "IdealWeight{" +
+                "id=" + id +
+                ", age=" + age +
+                ", gender=" + gender +
+                ", height=" + height +
+                '}';
+    }
 }

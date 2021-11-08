@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class IdealWeightService {
+
     private static final Logger log = LoggerFactory.getLogger(IdealWeightService.class);
 
     private final IdealWeightRepository repository;
@@ -20,21 +21,21 @@ public class IdealWeightService {
     }
 
     public void save(IdealWeight idealWeight) {
-        log.info("save ideal weight ", idealWeight);
+        log.info("save ideal weight {}", idealWeight);
 
-        idealWeightCalculate();
+        calculate(idealWeight);
         repository.save(idealWeight);
     }
-    private int age = 0;
-    private Gender gender ;
-    private Integer height ;
-    private double result;
 
-    private Double idealWeightCalculate() {
-        if (gender == Gender.MALE){
-            result = height - 100 -((height - 150)/4 +(age - 20)/4);
-        }else if(gender == Gender.FEMALE){
-            result = height - 100 -((height - 150)/2.5 +(age - 20)/6);
-        }return result;
+    private Double calculate(IdealWeight idealWeight) {
+        int height = idealWeight.getHeight();
+        int age = idealWeight.getAge();
+        Gender gender = idealWeight.getGender();
+
+        switch (gender) {
+            case MALE: return height - 100 - ((height - 150) / 4d + (age - 20) / 4d);
+            case FEMALE: return height - 100 - ((height - 150) / 2.5 + (age - 20) / 6d);
+            default: throw new IllegalArgumentException("no other gender created by God");
+        }
     }
 }
