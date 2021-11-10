@@ -17,10 +17,10 @@
                 <use xlink:href="#bootstrap"></use>
             </svg>
 
-            <a class="navbar-brand" href="/home">
-                <img th:src="@{/images/icon-32x32.png}"/>
-                Agile
+            <a class="navbar-brand" th:href="@{/home}">
+                <img height="62px" th:src="@{/images/logo.png}" width="62px">
             </a>
+
             <button class="navbar-toggler" data-bs-target="#navbarScroll" data-bs-toggle="collapse" type="button"
                     aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,12 +30,17 @@
                 <!-- left side -->
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/projects}">Projects</a>
+                        <a class="nav-link" th:href="@{/home}">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/tasks}">Issues</a>
+                        <a class="nav-link" th:href="@{/about}">About Us</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/contact}">Contact</a>
+                    </li>
+
 
                     <!-- show only to admins -->
                     <li class="nav-item" sec:authorize="hasRole('ADMIN')">
