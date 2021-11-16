@@ -3,23 +3,14 @@ package com.sda.project.service;
 import com.sda.project.model.ActivityLevel;
 import com.sda.project.model.CalorieCount;
 import com.sda.project.model.Gender;
-import com.sda.project.repository.CalorieCountRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CalorieCountService {
 
     private static final Logger log = LoggerFactory.getLogger(CalorieCountService.class);
-
-    private final CalorieCountRepository repository;
-
-    @Autowired
-    public CalorieCountService(CalorieCountRepository repository) {
-        this.repository = repository;
-    }
 
     public void save(CalorieCount calorieCount) {
         log.info("save calorie count {}", calorieCount);
@@ -29,7 +20,6 @@ public class CalorieCountService {
 
         double numberOfCalories = calculateNoOfCalories(calorieCount);
         calorieCount.setResult(numberOfCalories);
-        repository.save(calorieCount);
     }
 
     /**
@@ -51,8 +41,8 @@ public class CalorieCountService {
     }
 
     /**
-     * Calculates the body mass index based on gender, age, weight, height.
-     * @return the body mass index
+     * Calculates the basal metabolic rate based on gender, age, weight, height.
+     * @return the Basal Metabolic Rate (BMR)
      */
     private Double calculateBMR(CalorieCount calorieCount) {
         Gender gender = calorieCount.getGender();
